@@ -26,8 +26,37 @@
       <version>4.12</version>
       <scope>test</scope>
     </dependency>
+    <!-- selenium-java -->
+    <!--<dependency>
+      <groupId>org.seleniumhq.selenium</groupId>
+      <artifactId>selenium-java</artifactId>
+      <version>3.4.0</version>
+    </dependency>-->
+    <dependency>
+      <groupId>org.seleniumhq.selenium</groupId>
+      <artifactId>selenium-java</artifactId>
+      <version>3.4.0</version>
+    </dependency>
+    <dependency>
+    <groupId>com.opera</groupId>
+    <artifactId>operadriver</artifactId>
+    </dependency>
+    </dependencies>
+    <dependencyManagement>
+    <dependencies>
+    <dependency>
+      <groupId>com.opera</groupId>
+      <artifactId>operadriver</artifactId>
+      <version>1.5</version>
+      <exclusions>
+        <exclusion>
+          <groupId>org.seleniumhq.selenium</groupId>
+          <artifactId>selenium-remote-driver</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
   </dependencies>
-
+  </dependencyManagement>
   <build>
     <finalName>webapp</finalName>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
